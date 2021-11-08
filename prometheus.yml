@@ -1,0 +1,30 @@
+global:
+  scrape_interval: 30s
+  evaluation_interval: 30s
+
+scrape_configs:
+  - job_name: "mrtg_amprnet"
+    metrics_path: "/probe"
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: "router.va3zza.com:9230"
+    static_configs:
+      - targets:
+          - "nickname http://mrtg.router.va3zza.com/localhost_wg0.html"
+  
+  - job_name: "mrtg_public"
+    metrics_path: "/probe"
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: "router.va3zza.com:9230"
+    static_configs:
+      - targets:
+          - "nickname http://mrtg.router.va3zza.com/localhost_enp1s0.html"
