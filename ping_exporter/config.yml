@@ -1,0 +1,19 @@
+---
+targets:
+  - 8.8.8.8
+  - router.va3zza.com
+  - va3zza.com
+  - 44.31.62.4
+  - 44.31.62.5
+  - gw-ca-tor-01.servers.retrylife.ca
+  - mrtg.router.va3zza.com
+
+dns:
+  refresh: 2m15s
+  nameserver: 1.1.1.1
+
+ping:
+  interval: 15s
+  timeout: 3s
+  history-size: 42
+  payload-size: 120

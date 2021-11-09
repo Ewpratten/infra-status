@@ -1,6 +1,14 @@
 version: "3"
 
 services:
+
+  ping_exporter:
+    image: czerwonk/ping_exporter
+    volumes:
+     - ./ping_exporter:/config:ro
+    # ports:
+    #   - 9427:9427
+
   prometheus:
     image: prom/prometheus
     # ports:
