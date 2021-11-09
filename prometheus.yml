@@ -28,3 +28,7 @@ scrape_configs:
     static_configs:
       - targets:
           - "nickname http://mrtg.router.va3zza.com/localhost_enp1s0.html"
+  
+  - job_name: "wireguard"
+    static_configs:
+      - targets: ["router.va3zza.com:9586"]
